@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Polytope Studio/Lowpoly_Environments/SRP/PT_Nature_Free_URP_10.10.1.unitypackage.meta
 guid: da738e7716a7c424b8eba26f208307b6
+========
+guid: 25856c228bb40c14a892c4a5aac24722
+>>>>>>>> main:Assets/Scenes/MainMenu.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
