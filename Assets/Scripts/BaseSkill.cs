@@ -7,7 +7,7 @@ public abstract class BaseSkill : MonoBehaviour
     protected List<BaseUnit> _units;
     [SerializeField] protected GameObject gObjParticle;
     public float curTime = 0;
-    public readonly float cooldown = 2f;
+    public readonly float cooldown = 10f;
     public readonly float price = 1000f;
     public abstract bool TryPlaySkill();
     public abstract void FindTargets();
@@ -21,5 +21,11 @@ public abstract class BaseSkill : MonoBehaviour
             yield return new WaitForSeconds(Time.deltaTime);
         }
         curTime = 0;
+    }
+    public void PlaySkill()
+    {
+        if (IsCooldown()) return;
+        StartCoroutine(Delay());
+        FindTargets();
     }
 }
