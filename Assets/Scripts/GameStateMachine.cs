@@ -17,6 +17,7 @@ public class GameStateMachine : MonoBehaviour {
         MainController.GameStateChange += OnGameStateChange;
         _observers = new List<IObservable>();
     }
+
     private void OnDisable() {
         MainController.GameStateChange -= OnGameStateChange;
     }
