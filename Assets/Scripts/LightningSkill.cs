@@ -16,20 +16,21 @@ public class LightningSkill : BaseSkill
         StartCoroutine(Delay());
         return true;
     }
-    public override void FindTargets() { 
-        if (IsCooldown()) return;
+    public override void FindTargets() {
         _units = FindObjectsOfType<BaseUnit>().Where((unit) => unit.isEnemy).ToList();
         _units.ForEach((unit) =>
         {
             SpawnParticle(unit.transform.position);
             unit.UpdateHealth(damage);
-            if (unit.CurHealth == 0) { 
-                Destroy(unit, 2);
+            if (unit.CurHealth == 0) {
+                Destroy(unit.gameObject, 2);
             }
         });
     }
     private void SpawnParticle(Vector3 target) {
         GameObject obj = Instantiate(gObjParticle);
-        obj.transform.position = new Vector3(target.x, target.y + 20, target.z);
+        obj.transform.position = new Vector3(target.x, target.y + 80, target.z);
+        obj.GetComponent<ParticleSystem>().Play();
+        Destroy(obj, 3);
     }
 }
