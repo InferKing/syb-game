@@ -20,7 +20,7 @@ public class ClickСoordinates : MonoBehaviour
     private void Update()
     {
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
+        RaycastHit hit = new RaycastHit();
         if (Input.GetMouseButtonDown(0) && SpecifyingPointUnits)
         {
             if (Physics.Raycast(ray, out hit))
@@ -36,8 +36,9 @@ public class ClickСoordinates : MonoBehaviour
             IHealth Health = collider.GetComponent<IHealth>();
             if (Health != null)
             {
-                            collider.gameObject.AddComponent<Outline>();
-
+                collider.gameObject.AddComponent<Outline>();
+                BaseUnit unit = collider.gameObject.GetComponent<BaseUnit>();
+                unit.MoveTo(ClickPosition);
             }
         }
     
