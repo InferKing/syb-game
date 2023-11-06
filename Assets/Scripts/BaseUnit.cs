@@ -45,7 +45,6 @@ public class BaseUnit : MonoBehaviour, IObservable, IHealth {
     {
         if (target == null) return;
         _agent.SetDestination(target);
-        //_agent.Move(target);
         Debug.Log(target);
     }
     public void UpdateState(UnitState state)

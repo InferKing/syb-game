@@ -344,6 +344,7 @@ MonoBehaviour:
   _mainSoundSlider: {fileID: 1272484294}
   _fxSoundSlider: {fileID: 1391669121}
   _musicSoundSlider: {fileID: 1861343964}
+  _musicMixer: {fileID: 24100000, guid: 4062eb38dce78d749a2710e9c3a30f2e, type: 2}
 --- !u!4 &451483283
 Transform:
   m_ObjectHideFlags: 0
