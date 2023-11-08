@@ -6,3 +6,4 @@ public class MainController : MonoBehaviour
 {
     public static System.Action<GlobalGameState> GameStateChange;
 }
+
